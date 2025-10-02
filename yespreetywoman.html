@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Beautiful Fatima 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe Script', cursive;
+      background: url('https://i.ibb.co/BKb6Lcz/romantic-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      backdrop-filter: brightness(0.9);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 5px #c71585;
+    }
+
+    #poem {
+      font-size: 1.5em;
+      max-width: 90%;
+      line-height: 1.5;
+      transition: opacity 1s ease-in-out;
+      text-shadow: 1px 1px 3px #00000088;
+    }
+
+    .fade {
+      opacity: 0;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      #poem {
+        font-size: 1.8em;
+        max-width: 700px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>To: Fatima 💕</h1>
+  <div id="poem">You are the light that brightens my darkest days 💫</div>
+
+  <!-- 🎵 Romantic Background Music -->
+  <audio autoplay loop id="bgMusic">
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const quotes = [
+      "You are the light that brightens my darkest days 💫",
+      "Every love story is beautiful, but ours is my favorite 💖",
+      "With you, I have everything I’ll ever need 🌹",
+      "You are a blessing in my life, Fatima 💕",
+      "I thank God every day for bringing you to me 🙏"
+    ];
+
+    let index = 0;
+    const poemEl = document.getElementById("poem");
+
+    setInterval(() => {
+      poemEl.classList.add("fade");
+      setTimeout(() => {
+        index = (index + 1) % quotes.length;
+        poemEl.textContent = quotes[index];
+        poemEl.classList.remove("fade");
+      }, 1000);
+    }, 4000);
+  </script>
+
+</body>
+</html>
